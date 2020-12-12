@@ -32,7 +32,9 @@ class GooleAPI {
 			});
 			return promise
 		}
-		return this.api.post(`${middle_url}/geolocate?key=${GOOGLE_MAP_API_KEY}`)
+		return this.api.post(`${middle_url}/geolocate?key=${GOOGLE_MAP_API_KEY}`).catch(() => {
+			return defaultLoc
+		})
 	}
 }
 

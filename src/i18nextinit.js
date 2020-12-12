@@ -2,11 +2,12 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import translationEN from "assets/locales/en/translation.json";
 import translationID from "assets/locales/id/translation.json";
-import Coookie from 'js-cookie'
+import Cookie from 'js-cookie'
 
-const defaultLang = Coookie.get('preferred_lang') || process.env.REACT_APP_DEFAULT_PREFERRED_LANG
+const langCookieName = process.env.REACT_APP_LANG_COOKIE_NAME
+const defaultLang = Cookie.get(langCookieName) || process.env.REACT_APP_DEFAULT_PREFERRED_LANG
 const fallbackLng = [`${defaultLang}`];
-Coookie.set('preferred_lang', defaultLang)
+Cookie.set(langCookieName, defaultLang)
 const availableLanguages = ["en", "id"];
 
 const resources = {

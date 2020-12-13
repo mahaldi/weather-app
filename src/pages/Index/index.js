@@ -8,16 +8,27 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import CurrentWeather from 'components/widget/currentWeather'
 import Grid from '@material-ui/core/Grid'
 import {convertEpochtoTime} from 'services/constant/format'
+import ForeCast from 'components/widget/forecast'
 
 const LandingPage = props => {
 	const baseURLIcon = process.env.REACT_APP_BASE_URL_ICONS + '/'
 	const [allCurrentWeather, setAllCurrenWeather] = useState({loading: true, data: []})
 
-	const {fetchCurrentLocationConnect, oneCall, fetchCurrentWeatherConnect, fetchOneCallConnect} = props // eslint-disable-line
+	const {fetchCurrentLocationConnect, oneCall, fetchCurrentWeatherConnect, fetchOneCallConnect} = props
 	const locations = React.useMemo(
 		() => ['jakarta', 'bandung', 'bali'],
 		[]
 	)
+	const {loading: loadingForeCast} = oneCall
+	const foreCastData = get(oneCall, 'data', {})
+	const todayForeCast = get(foreCastData, 'daily[0]', {})
+	const reCreateForeCastData = {
+		locationName: foreCastData.timezone,
+		morningTemp: get(todayForeCast, 'temp.morn', 0),
+		afterNoonTemp: get(todayForeCast, 'temp.day', 0),
+		eveningTemp: get(todayForeCast, 'temp.eve', 0),
+		nightTemp: get(todayForeCast, 'temp.night', 0),
+	}
 	const onFetchingData = () => {
 		fetchCurrentLocationConnect().then(async(result) =>{
 			const location = get(result, 'location', {})
@@ -62,6 +73,12 @@ const LandingPage = props => {
 	return (
 		<React.Fragment>
 			<Grid container direction="column" spacing={4}>
+				<Grid item>
+					{
+						loadingForeCast ? <Skeleton variant="rect" height={149} /> :
+						<ForeCast data={reCreateForeCastData}/>
+					}
+				</Grid>
 				{
 					allCurrentWeather.loading ?
 					renderSkeleton()

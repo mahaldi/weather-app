@@ -9,5 +9,10 @@
 	"humidity": "Kelembapan",
 	"wind": "Angin",
 	"sunrise": "Terbit",
-	"sunset": "Terbenam"
+	"sunset": "Terbenam",
+	"todays_forecast": "Ramalan Cuaca Hari Ini",
+	"morning": "Pagi",
+	"afternoon": "Siang",
+	"evening": "Sore",
+	"night": "Malam"
 }

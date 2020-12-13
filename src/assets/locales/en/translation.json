@@ -9,5 +9,10 @@
 	"humidity": "Humidity",
 	"wind": "Wind",
 	"sunrise": "Sunrise",
-	"sunset": "Sunset"
+	"sunset": "Sunset",
+	"todays_forecast": "Today's Forecast",
+	"morning": "Morning",
+	"afternoon": "Afternoon",
+	"evening": "Evening",
+	"night": "Night"
 }

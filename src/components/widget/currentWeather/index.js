@@ -3,7 +3,7 @@ import style from './style'
 import Proptypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import {WiCelsius} from 'weather-icons-react'
+import {WiCelsius, WiThermometer, WiThermometerExterior, WiHumidity, WiWindy, WiSunrise, WiSunset} from 'weather-icons-react'
 import { useTranslation } from "react-i18next";
 
 const CurrentWeather = props => {
@@ -49,7 +49,7 @@ const CurrentWeather = props => {
 									<Grid item>
 										<Grid container justify="space-between">
 											<Grid item>
-												<Typography>{t("high")} / {t("low")}</Typography>
+												<Typography><WiThermometer className={classes.iconPosition} size={24} color="#000"/>{t("high")} / {t("low")}</Typography>
 											</Grid>
 											<Grid>
 												<Typography>{temp_max}/{temp_min}</Typography>
@@ -59,7 +59,7 @@ const CurrentWeather = props => {
 									<Grid item>
 										<Grid container justify="space-between">
 											<Grid item>
-												<Typography>{t("feels_like")}</Typography>
+												<Typography><WiThermometerExterior className={classes.iconPosition} size={24} color="#000"/>{t("feels_like")}</Typography>
 											</Grid>
 											<Grid>
 												<Typography>{feels_like}</Typography>
@@ -69,10 +69,10 @@ const CurrentWeather = props => {
 									<Grid item>
 										<Grid container justify="space-between">
 											<Grid item>
-												<Typography>{t("humidity")}</Typography>
+												<Typography><WiHumidity className={classes.iconPosition} size={24} color="#000"/>{t("humidity")}</Typography>
 											</Grid>
 											<Grid>
-												<Typography>{humidity}</Typography>
+												<Typography>{humidity}%</Typography>
 											</Grid>
 										</Grid>
 									</Grid>
@@ -84,7 +84,7 @@ const CurrentWeather = props => {
 									<Grid item>
 											<Grid container justify="space-between">
 												<Grid item>
-													<Typography>{t("wind")}</Typography>
+													<Typography><WiWindy className={classes.iconPosition} size={24} color="#000"/>{t("wind")}</Typography>
 												</Grid>
 												<Grid item>
 													{wind}
@@ -94,7 +94,7 @@ const CurrentWeather = props => {
 									<Grid item>
 										<Grid container justify="space-between">
 											<Grid item>
-												<Typography>{t("sunrise")}</Typography>
+												<Typography><WiSunrise className={classes.iconPosition} size={24} color="#000"/>{t("sunrise")}</Typography>
 											</Grid>
 											<Grid>
 												<Typography>{sunrise}</Typography>
@@ -104,7 +104,7 @@ const CurrentWeather = props => {
 									<Grid item>
 										<Grid container justify="space-between">
 											<Grid item>
-												<Typography>{t("sunset")}</Typography>
+												<Typography><WiSunset className={classes.iconPosition} size={24} color="#000"/>{t("sunset")}</Typography>
 											</Grid>
 											<Grid>
 												<Typography>{sunset}</Typography>

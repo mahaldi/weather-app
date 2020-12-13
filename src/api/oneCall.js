@@ -15,6 +15,7 @@ class OneCallAPI {
 			params: {
 				appid: WEATHER_API_KEY,
 				lang: CURRENT_PREFFERED_LANG,
+				exclude: 'minutely,alerts,hourly',
 				lat,
 				lon
 			},

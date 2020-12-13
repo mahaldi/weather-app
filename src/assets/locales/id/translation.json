@@ -1,4 +1,13 @@
 {
   "select_language": "Pilih Bahasa",
-  "hello_welcome_to_react": "Halo, Selamat Datang"
+	"hello_welcome_to_react": "Halo, Selamat Datang",
+	"app_name": "App Cuaca",
+	"weather_today_in": "Cuaca Hari ini di",
+	"high": "Tertinggi",
+	"low": "Terendah",
+	"feels_like": "Terasa Seperti",
+	"humidity": "Kelembapan",
+	"wind": "Angin",
+	"sunrise": "Terbit",
+	"sunset": "Terbenam"
 }

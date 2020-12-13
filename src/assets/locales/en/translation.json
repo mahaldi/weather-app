@@ -1,4 +1,13 @@
 {
   "select_language": "Select Language",
-  "hello_welcome_to_react": "Hello, Welcome to React"
+	"hello_welcome_to_react": "Hello, Welcome to React",
+	"app_name": "Weather-App",
+	"weather_today_in": "Weather Today in",
+	"high": "High",
+	"low": "Low",
+	"feels_like": "Feels Like",
+	"humidity": "Humidity",
+	"wind": "Wind",
+	"sunrise": "Sunrise",
+	"sunset": "Sunset"
 }
